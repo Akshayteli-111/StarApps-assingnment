@@ -1,0 +1,221 @@
+:root{
+  box-sizing: border-box;
+}
+*, *::after, *::before{
+  box-sizing: border-box;
+  margin: 0; 
+  padding: 0; 
+}
+
+.product img{
+  max-width: 50%;
+  min-width: 20rem;
+  margin-left: 20%;
+}
+.containers{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  height: 100vh; 
+  width: 100vw; 
+  padding: 0 2.5rem;
+  place-items: center;
+  background-color: hsl(30, 50%, 75%);
+}
+.product::after{
+  content: "";
+  position: absolute;
+  top: 0; 
+  right: 0; 
+  bottom: 0; 
+  left: 0; 
+  background-color: hsl(30, 50%, 75%);
+  /* opacity: 0.5; */
+  mix-blend-mode: hue;                
+
+}
+
+.product-nav{
+  position: relative;
+  width: 50%;
+}
+.product-nav label{
+  display: inline-block;
+  width: 3vmin; 
+  height: 3vmin; 
+  background-color: hsl(30, 50%, 75%);
+  border-radius: 50%;
+  cursor: pointer;
+  /* box-shadow: 0 0 0 0.5em #fff,
+              0.5em 0.5em 1em -0.15em rgba(0, 0, 0, 0.25); */
+  transition: 200ms all ease-in-out;
+}
+
+.product-nav label + label{
+  margin-left: 2.5em; 
+}
+
+.product-nav label:nth-of-type(1), 
+#color-1:checked ~ .product::after{
+  background-color: hsl(30, 50%, 75%);
+}
+.product-nav label:nth-of-type(2), 
+#color-2:checked ~ .product::after{
+  background-color: hsl(120, 50%, 75%);
+}
+.product-nav label:nth-of-type(3),
+#color-3:checked ~ .product::after{
+  background-color: hsl(210, 50%, 75%);
+}
+.product-nav label:nth-of-type(4),
+#color-4:checked ~ .product::after{
+  background-color: hsl(300, 50%, 75%);
+}
+
+
+#color-1:checked ~ .product-nav > label:nth-of-type(1),
+#color-2:checked ~ .product-nav > label:nth-of-type(2),
+#color-3:checked ~ .product-nav > label:nth-of-type(3),
+#color-4:checked ~ .product-nav > label:nth-of-type(4){
+  transform: scale(1);
+}
+
+#color-1:checked ~ .product-nav > label:nth-of-type(1){
+  background-color: hsl(30, 70%, 45%);
+  box-shadow: 0px 0px 0 10px hsl(30, 70%, 45%,0.5);
+}
+#color-2:checked ~ .product-nav > label:nth-of-type(2){
+  background-color: hsl(120, 70%, 45%);
+  box-shadow: 0px 0px 0 10px hsl(120, 70%, 45%,0.5);
+}
+#color-3:checked ~ .product-nav > label:nth-of-type(3){
+  background-color: hsl(210, 70%, 45%);
+  box-shadow: 0px 0px 0 10px hsl(210, 70%, 45%,0.5);
+}
+#color-4:checked ~ .product-nav > label:nth-of-type(4){
+  background-color: hsl(300, 70%, 45%);
+  box-shadow: 0px 0px 0 10px hsl(300, 70%, 45%,0.5);
+}
+input[type=file] {
+  color: transparent !important;
+}::file-selector-button { font-size: initial; border: none !important; background: green !important; color: transparent !important; }
+
+
+
+.file-upload {
+  background-color: #ffffff;
+  width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.file-upload-btn {
+  width: 100%;
+  margin: 0;
+  color: #fff;
+  background: #1FB264;
+  border: none;
+  padding: 10px;
+  border-radius: 4px;
+  border-bottom: 4px solid #15824B;
+  transition: all .2s ease;
+  outline: none;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.file-upload-btn:hover {
+  background: #1AA059;
+  color: #ffffff;
+  transition: all .2s ease;
+  cursor: pointer;
+}
+
+.file-upload-btn:active {
+  border: 0;
+  transition: all .2s ease;
+}
+
+.file-upload-content {
+  display: none;
+  text-align: center;
+}
+
+.file-upload-input {
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  outline: none;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.image-upload-wrap {
+  margin-top: 20px;
+  border: 4px dashed #1FB264;
+  position: relative;
+}
+
+.image-dropping,
+.image-upload-wrap:hover {
+  background-color: #1FB264;
+  border: 4px dashed #ffffff;
+}
+
+.image-title-wrap {
+  padding: 0 15px 15px 15px;
+  color: #222;
+}
+
+.drag-text {
+  text-align: center;
+}
+
+.drag-text h3 {
+  font-weight: 100;
+  text-transform: uppercase;
+  color: #15824B;
+  padding: 60px 0;
+}
+
+.file-upload-image {
+  max-height: 200px;
+  max-width: 200px;
+  margin: auto;
+  padding: 20px;
+}
+
+.remove-image {
+  width: 200px;
+  margin: 0;
+  color: #fff;
+  background: #cd4535;
+  border: none;
+  padding: 10px;
+  border-radius: 4px;
+  border-bottom: 4px solid #b02818;
+  transition: all .2s ease;
+  outline: none;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.remove-image:hover {
+  background: #c13b2a;
+  color: #ffffff;
+  transition: all .2s ease;
+  cursor: pointer;
+}
+
+.remove-image:active {
+  border: 0;
+  transition: all .2s ease;
+}
+
+
+.test {
+  /* position: absolute; */
+  margin-right: 20%;
+}
